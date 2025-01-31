@@ -1,0 +1,11 @@
+<div class="gallerySite">
+    <h2>Galeria</h2>
+    <div>
+        <button type="button" class="btn btn-primary" (click)="changeWidth()">Rozmiar obrazu: {{width}}px</button>
+    </div>
+    <div class="galleryView">
+        @for (item of items$; track $index) {
+            <gallery-item [image]="item.image" [imWidth]="width"></gallery-item>
+        }
+    </div>
+</div>

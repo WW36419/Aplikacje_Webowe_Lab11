@@ -1,0 +1,9 @@
+<div class="card">
+    <h2>{{ title }}</h2>
+    <blog-item-image [image]="image"></blog-item-image>
+    <div class="card-body">
+        <blog-item-text [text]="text" [postId]="postId"></blog-item-text>
+    </div>
+    <comments-section [postId]="postId"></comments-section>
+    <button (click)="deletePost()">Usuń post</button>
+</div>

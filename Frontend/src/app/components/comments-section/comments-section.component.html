@@ -1,0 +1,21 @@
+<div class="card">
+    <form [formGroup]="commentForm" (ngSubmit)="sendComment()">
+        <fieldset>
+            <legend>Napisz komentarz:</legend>
+            <div><label for="user"></label>
+                <input type="text" id="user" formControlName="user" placeholder="Nazwa użytkownika">
+            </div>
+            <div><label for="content"></label>
+                <textarea id="content" formControlName="content" rows="2" cols="20" placeholder="Wpisz komentarz..."></textarea>
+            </div>
+            <div>
+                <button type="submit" [disabled]="!commentForm.valid">Wyślij komentarz</button>
+            </div>
+        </fieldset>
+    </form>
+    @for (item of comment_items; track $index) {
+        <ul>
+            <comments-item [user]="item.user" [content]="item.content"></comments-item>
+        </ul>
+    }
+</div>

@@ -1,0 +1,18 @@
+<!--
+<div>
+    <add-post></add-post>
+</div>
+-->
+
+@if ((items$ | filter:filterText).length === 0) {
+    <h4>Brak wyników spełniających kryteria wyszukiwania</h4>
+}
+@for (item of items$ | filter:filterText; track item._id) {
+    <blog-item 
+        [postId]="item._id" 
+        [title]="item.title" 
+        [image]="item.image" 
+        [text]="item.text">
+    </blog-item>
+}
+    

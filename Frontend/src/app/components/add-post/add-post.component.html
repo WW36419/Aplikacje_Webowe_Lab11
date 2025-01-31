@@ -1,0 +1,20 @@
+<form [formGroup]="postForm" (ngSubmit)="sendPost()">
+    <fieldset>
+        <legend>Utwórz post:</legend>
+        <div><label for="postId"></label>
+            <input type="text" id="postId" formControlName="postId" placeholder="ID postu">
+        </div>
+        <div><label for="title"></label>
+            <input type="text" id="title" formControlName="title" placeholder="Tytuł">
+        </div>
+        <div><label for="text"></label>
+            <textarea id="text" formControlName="text" rows="2" cols="20" placeholder="Napisz post..."></textarea>
+        </div>
+        <div><label for="image"></label>
+            <input type="url" id="image" formControlName="image" placeholder="Link zdjęcia (z internetu)">
+        </div>
+        <div>
+            <button type="submit" [disabled]="!postForm.valid">Dodaj post</button>
+        </div>
+    </fieldset>
+</form>
